@@ -6,3 +6,12 @@ Location: Lycoming County, PA [swing state]
 - Polling place ran older individuals (100% had grey hair) 
 - Signed paper next to name
 - Zero ID verification 
+
+## Links
+
+Make / Model: Clear Ballot ClearCast and ClearCast Go
+Equipment Type: Hand-Fed Optical Scan Tabulator
+
+
+
+[https://verifiedvoting.org/election-system/clear-ballot-clearcast/](equipment specs)
