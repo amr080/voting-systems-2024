@@ -3,7 +3,7 @@
 **Location:** Lycoming County, PA (swing state)
 
 ### Voting Process
-- **Technology Used:** ClearCast voting systems
+- **Technology Used:** ClearCast voting system 550
 - **Ballot Type:** Paper ballot inserted into machine
 - **Polling Place Demographics:** Managed by older individuals (100% had grey hair)
 - **Verification Process:**
