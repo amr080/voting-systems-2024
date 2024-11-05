@@ -43,7 +43,7 @@ While the system has some good security measures like avoiding internet connecti
 - Distance and Barriers: Keep sensitive equipment away from external walls.
 
 
-
+https://en.wikipedia.org/wiki/Tempest_(codename)
 
 
 
