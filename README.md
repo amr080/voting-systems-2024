@@ -13,4 +13,4 @@
 ## Technology
 - **Make/Model:** Clear Ballot ClearCast and ClearCast Go
 - **Equipment Type:** Hand-Fed Optical Scan Tabulator
-- [Equipment Specs on Verified Voting](https://verifiedvoting.org/election-system/clear-ballot-clearcast/)
+- [Equipment Specs](https://verifiedvoting.org/election-system/clear-ballot-clearcast/)
