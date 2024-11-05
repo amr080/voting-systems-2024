@@ -1,1 +1,21 @@
 https://verifiedvoting.org/election-system/clear-ballot-clearcast/
+
+
+Overview
+Clear Ballot’s ClearCast is a ballot scanning device. It is used in polling locations with hand-marked paper ballots, which voters hand-feed into the scanner. Ballots can be inserted into ClearCast in any orientation: face up, face down, header first, or footer first. The device simultaneously scans the front and back of a paper ballot, interprets voter marks, and communicates any issues that require the voter’s attention back to the voter through an LCD display. If the voter has marked too many choices in a race, the display lets the voter know this and offers the option to return the ballot for correction, or to cast the ballot. ClearCast can also be configured to return ballots with too few choices, or entirely blank ballots. After the voter has a chance to review any errors, the ClearCast scanner pulls the ballot through a motorized feed and deposits the ballots into an attached ballot bag. When the polls close, ClearCast can print out the race results and other information on a paper tape (if configured to do so).
+
+ClearCast device is a scanning device only and does not have features that support marking choices on ballots, such as an audio-tactile controller. In 2022, Clear Ballot introduced the ClearCast Go, a smaller scanner with quicker scan times and a more intuitive user interface for poll workers and voters.
+
+
+
+References
+ClearVote 1.5 Certification, Pennsylvania Department of the Commonwealth (2019)
+ClearVote 1.4 Final Test Report, Election Assistance Commission (2018)
+Report of the Washington Secretary of State on the Examination of Clear Ballot Group ClearVote 1.4.2 Voting System (2018)
+Clear Ballot Response to EFI for the State of Georgia [redacted] (2018)
+Report of the Washington Secretary of State on the Examination of Clear Ballot Group ClearVote 1.3.3 Voting System (2017)
+Clear Ballot Petition for Approval of Electronic Voting System ClearVote 1.4, Wisconsin Elections Commission (2017)
+Report of the Washington Secretary of State on the Examination of Clear Ballot Group ClearVote 1.3 Voting System (2016)
+San Francisco RFI for Election Systems: Clear Ballot (2015)
+ClearVote 1.0 Voting System State of Colorado Certification Testing (2015)
+Colorado Clear Audit System Accuracy and Mark Sensitivity Testing (2014)
