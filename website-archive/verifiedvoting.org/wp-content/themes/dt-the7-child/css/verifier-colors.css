@@ -1,0 +1,258 @@
+/* STYLE FOR SVG */
+svg text {
+  pointer-events: none;
+}
+
+text.back, text.back-state {
+  stroke: #000;
+}
+
+[data-code=mbdv] { /* Ballot marking devices */
+  fill: #97cc5f;
+  background: #97cc5f;
+}
+
+[data-code=hcpb] {
+  fill: #b2c2d6;
+  background: #b2c2d6;
+}
+
+[data-code=hfos] {
+  fill: #489ebf;
+  background: #489ebf;
+}
+
+[data-code=hcos] {
+  fill: #489ebf;
+  background: #489ebf;
+}
+
+[data-code=bfos] {
+  fill: #25437e;
+  background: #25437e;
+}
+
+[data-code=pcvs_mail] {
+  fill: #b063d6;
+  background: #b063d6;
+}
+
+[data-code=none_abs] {
+  fill: #fafafa;
+  background: #fafafa;
+}
+
+[data-code=hmpb] { /* PAPER BALLOT */
+  fill: #0f7442;
+  background: #0f7442;
+}
+
+[data-code=bmdn] { /* Ballot marking devices */
+  fill: #fad565;
+  background: #fad565;
+}
+
+[data-code=bmds], [data-code=hmbx] { /* Ballot marking devices in legend aggregator */
+  fill: #fad565;
+  background: #fad565;
+}
+
+[data-code=bmds_pp] { /* Ballot marking devices */
+  fill: #fad565;
+  background: #fad565;
+}
+
+[data-code=bmds_acc], [data-code=mbdn] { /* Ballot marking devices */
+  fill: #0f7442;
+  background: #0f7442;
+}
+
+[data-code=bmos] { /* Hybrid BMD/Tabulator */
+  fill: #fff;
+  background: #ee9154;
+}
+
+[data-code=mpdv], [data-code=hbdv] { /* mixed paper ballot with vvpat */ /* "Hand marked paper ballots, with DREs with VVPAT for accessibility" */
+  fill: #31974d;
+  background: #31974d;
+}
+
+[data-code=mpdn], [data-code=pbdn] { /* mixed paper ballot without vvpat */
+  fill: #a0d464;
+  background: #a0d464;
+}
+
+[data-code=drev], [data-code=bmdv], [data-code=drev_acc], [data-code=dren_acc] { /* DRE with VVPAT */ /* mixed paper ballot with vvpat */
+  fill: #d75438;
+  background: #d75438;
+}
+
+[data-code=dren] { /* DRE NO VVPAT */
+  fill: #b3302a;
+  background: #b3302a;
+}
+
+[data-code=none] {
+  fill: #fff;
+  background: #b9b9b9;
+}
+
+[data-code=paper], [data-code=paper-poll-book] {
+  fill: #fff;
+  background: #c1c1c1;
+}
+
+[data-code=in-house], [data-code=in-house-electronic-poll-book] {
+  fill: #fff;
+  background: #5FA3AC;
+}
+
+[data-code=commercial] {
+  fill: #fff;
+  background: #2B7079;
+}
+
+[data-code=epoll-none] {
+  fill: #fff;
+  background: #5e0008;
+}
+
+path[data-code=deselected], [data-code=deselected] {
+  fill: #eeeeee !important;
+  background: #eeeeee;
+}
+
+[data-code=selected] {
+  fill: #026DA5 !important;
+  stroke: #fff;
+  background: #026DA5;
+}
+
+[data-code=pcvs] { /* Punchcard ballots, BMDs for accessibility (2006-2014) */
+  fill: #b063d6;
+  background: #b063d6;
+}
+
+[data-code=lvrm], [data-code=lvpb] { /* Mechanical Lever Machines (2006-2008) */
+  fill: #5e0008;
+  background: #5e0008;
+}
+
+[data-code=election-systems-software], [data-code=ess] {
+  fill: #a77a1b;
+  background: #a77a1b;
+}
+
+[data-code=dominion-voting-systems], [data-code=dominion] {
+  fill: #1b918e;
+  background: #1b918e;
+}
+
+[data-code=hart-intercivic] {
+  fill: #2488e1;
+  background: #2488e1;
+}
+
+[data-code=clear-ballot] {
+  fill: #5e2db9;
+  background: #5e2db9;
+}
+
+[data-code=unisyn-voting-solutions], [data-code=unisyn] {
+  fill: #7d3310;
+  background: #7d3310;
+}
+
+[data-code=vsap] {
+  fill: #0f5252;
+  background: #0f5252;
+}
+
+[data-code=danaher-controls], [data-code=danaher] {
+  fill: #102b8e;
+  background: #102b8e;
+}
+
+[data-code=microvote] {
+  fill: #e84f8b;
+  background: #e84f8b;
+}
+
+[data-code=premier-election-solutions-diebold], [data-code=premier-diebold], [data-code=diebold], [data-code=diebold-election-systems], [data-code=premier-diebold-dominion] {
+  fill: #1e7334;
+  background: #1e7334;
+}
+
+[data-code=sequoia-voting-systems], [data-code=sequoia-dominion], [data-code=sequoia] {
+  fill: #470a0e;
+  background: #470a0e;
+}
+
+[data-code=advanced-voting-solutions], [data-code=avs] {
+  fill: #decc54;
+  background: #decc54;
+}
+
+[data-code=avm], [data-code=lever], [data-code=shoup], [data-code=lever-machines-avm-shoup] {
+  fill: #921e4a;
+  background: #921e4a;
+}
+
+[data-code=smartmatic] {
+  fill: #06233f;
+  background: #06233f;
+}
+
+/* Taking out - used anywhere except absentee ballots, which is assigned above? 
+[data-code=hcpb], [data-code=hand-counted-paper-ballots] {
+  fill: #b9b9b9;
+  background: #b9b9b9;
+} */
+
+[data-code=other-make] {
+  fill: #feb8b1;
+  background: #feb8b1;
+}
+
+[data-code=hand-counted-paper-ballots] {
+  fill: #b9b9b9;
+  background: #b9b9b9;
+}
+
+.infolayer .legend rect {
+  fill: none !important;
+  fill-opacity: 0 !important;
+}
+
+/* text for areas */
+text[data-code=bmds], text[data-code=hmbx], text[data-code=tbas], text[data-code=pbpc], text[data-code=pcvs], text[data-code=deselected] {
+  stroke: #000;
+}
+
+path.navigate {
+  stroke: #000;
+}
+
+path.map-on {
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+path.greyed {
+  fill: #EEC !important;
+  stroke-width: 3px;
+}
+
+path.mapfader {
+  fill: #EDEDED !important;
+  stroke-width: 1px;
+  stroke: #000;
+}
+
+path.navigate:hover, path.navigate.hover {
+  /* stroke-width:3px; */
+  stroke: #000 !important;
+  stroke-width: 1px;
+  /* fill:#EEC !important;  */
+  cursor: pointer;
+}

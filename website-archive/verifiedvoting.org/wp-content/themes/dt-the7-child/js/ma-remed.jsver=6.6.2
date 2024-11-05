@@ -1,0 +1,312 @@
+jQuery(document).ready(function ($) {
+	if( $( ".bio-popup .close" ).length ){
+		//Add bio modal close button label Issue: VV-105
+		$( ".bio-popup .close" ).attr("aria-label", "Close Window");
+		//Add bio modal dialog widdget atributes Issue: VV-106
+		$(".bio-popup").attr({	
+								"role": "dialog", 
+								"aria-modal": true, 
+								"aria-label": "Team Member Bio Dialog"
+							});
+		$( ".bio-popup > h2" ).attr("tabindex", "-1");
+		
+		//Add bio modal dialog widget focus loop Issue: VV-106
+		$( ".bio-popup" ).on( "focusout", function() {
+			$this = $(this);
+			setTimeout(function() {
+				if ($this.has(document.activeElement).length == 0){
+					$this.find('a.close').eq(0).focus();
+				} 
+			}, 10);
+		});
+		
+		$( ".bio-popup" ).on("keypress", function(e){
+			$this = $(this);
+			switch (e.which){
+				case 27:    //Escape key
+					e.stopPropagation();
+					$this.find("a.close").click();
+					break;
+			}
+		});
+		
+		//Add bio modal dialog widget focus return Issue: VV-106
+		$(".bio-popup a.close").on( "click", function(){
+			$this = $(this);
+			$target = $this.parents(".bio-overlay").parents(".wpb_content_element").find("a.blue-btn");
+			$target[0].focus();
+			console.log($target[0]);
+			setTimeout(function() {
+				$target[0].focus();
+			}, 500);
+		});
+		
+		$(".team-content a.blue-btn").on( "click", function(){
+			$this = $(this);
+			$target = $this.parents(".wpb_content_element").find(".bio-overlay h2").eq(0);
+			setTimeout(function() {
+				$target[0].focus();
+			}, 500);
+		});
+		
+		$(".bio-overlay").on("click", function(e){
+			e.stopPropagation();
+			$this = $(this);
+			if(e.target == this){
+				$this.find("a.close")[0].click();
+			}
+		});
+	}
+	
+	//Add blog, press, etc. page sidebar landmark Issue: VV-045
+	if($(".news-type-list").length){
+		$(".news-type-list > div").first().wrap("<aside aria-label='Jump Menu'></aside>");
+	}
+	
+	//Add team page sidebar landmark Issue: VV-109
+	if($("#team-sidebar").length){
+		$("#team-sidebar > .vc_column-inner > .wpb_wrapper").wrap("<aside aria-label='Jump Menu'></aside>");
+	}
+	
+	//Add legal page sidebar landmark Issue: VV-134
+	if($("#legal-sidebar").length){
+		$("#legal-sidebar > .vc_column-inner > .wpb_wrapper").wrap("<aside aria-label='Jump Menu'></aside>");
+	}
+	
+	
+	//Add tabs widget attribute markup and interaction patterns Issue: VV-135
+	if($(".vc_tta-tabs .vc_tta-tabs-list").length){
+		if($(".vc_tta-tabs").siblings("h2").length){
+			$(".vc_tta-tabs").siblings("h2").each(function(){
+				$id = btoa(+new Date).substr(-7, 5);
+				$this = $(this);
+				$this.attr("id", $id).addClass("screen-reader-text");
+				$this.siblings(".vc_tta-tabs").find(".vc_tta-tabs-list").attr("aria-labelledby", $id);
+			});
+			
+		}
+		$(".vc_tta-tabs .vc_tta-tabs-list").attr("role", "tablist");
+		$(".vc_tta-tabs .vc_tta-tabs-list li.vc_tta-tab").attr("role", "presentation");
+		$(".vc_tta-tabs .vc_tta-tabs-list li.vc_tta-tab a").attr({
+			"role": "tab",
+			"tabindex": "-1",
+			"aria-selected": false,
+		});
+		setTimeout(function() {
+				$(".vc_tta-tabs .vc_tta-tabs-list li.vc_active a").attr({
+					"tabindex": "0",
+					"aria-selected": true,
+				});
+		}, 10);
+		
+		$(".vc_tta-tabs .vc_tta-panel .vc_tta-panel-body").attr({
+			"role": "tabpanel",
+			"tabindex": "0",
+		});
+		
+		$(".vc_tta-tabs .vc_tta-tabs-list li.vc_tta-tab a").each(function(){
+			$this = $(this);
+			$href = $this.attr("href").replace("#", "");
+			$href.replace("#", "");
+			$this.attr({
+				"aria-controls": $href,
+				"id": $href+"-tab",
+			});
+			$(".vc_tta-panel#" + $href + " .vc_tta-panel-body").attr("aria-labelledby", $href+"-tab");
+			
+		});
+		//Toggle slected state value
+		$(".vc_tta-tabs .vc_tta-tabs-list li.vc_tta-tab a").on("click", function(){
+			$parent = $(this).parents(".vc_tta-tabs-list");
+			$parent.find("li.vc_tta-tab a").attr({
+				"tabindex": "-1",
+				"aria-selected": false,
+			});
+			$(this).attr({
+				"tabindex": "0",
+				"aria-selected": true,
+			});
+		});
+		
+		$(".vc_tta-tabs .vc_tta-tabs-list li.vc_tta-tab a").on("keypress", function(e){
+			$this = $(this);
+			$next = $this.parents(".vc_tta-tab").next(".vc_tta-tab");
+			$prev = $this.parents(".vc_tta-tab").prev(".vc_tta-tab");
+			switch (e.which){
+				case 39:    //right arrow key
+					e.stopPropagation();
+					if($next.length){
+						$next.children("a")[0].focus()
+					}else{
+						$this.parents(".vc_tta-tabs-list").children(".vc_tta-tab").first().children("a")[0].focus();
+					}
+					break;
+				case 37:    //left arrow key
+					e.stopPropagation();
+					if($prev.length){
+						$prev.children("a")[0].focus()
+					}else{
+						$this.parents(".vc_tta-tabs-list").children(".vc_tta-tab").last().children("a")[0].focus();
+					}
+					break;
+				case 36:    //home key
+						e.stopPropagation();
+						$this.parents(".vc_tta-tabs-list").children(".vc_tta-tab").first().children("a")[0].focus();
+					break;
+				case 35:    //end key
+						e.stopPropagation();
+						$this.parents(".vc_tta-tabs-list").children(".vc_tta-tab").last().children("a")[0].focus();
+					break;
+			}
+		});
+	}
+	
+	//Add table columnheader roles in internet voting page Issue: VV-142
+	if($("table.vc-table-plugin-theme-classic_blue").length){
+		$("table.vc-table-plugin-theme-classic_blue tr.vc-th td").attr({
+			"role": "columnheader",
+			"scope": "col",
+		});
+	}
+	
+	//Add carousel widget attribute markup and interaction patterns Issue: VV-152
+	if($(".owl-carousel").length){
+		$(".owl-carousel").attr({
+			"role": "region",
+			"aria-roledescription": "carousel",
+			"id" : btoa(+new Date).substr(-7, 5),
+		});
+		if($(".owl-carousel").siblings("h2").length){
+			$(".owl-carousel").siblings("h2").each(function(){
+				$id = btoa(+new Date).substr(-7, 5);
+				$this = $(this);
+				$this.attr("id", $id);
+				$this.siblings(".owl-carousel").attr("aria-labelledby", $id);
+			});
+			
+		}
+		
+		$(".owl-stage").attr({
+			"aria-live": "off",
+			"aria-atomic": false,
+		});
+		setTimeout(function() {
+			$(".dt-owl-item:not('.cloned')").attr({
+				"role": "group",
+				"aria-roledescription": "slide",
+			});
+		
+			$numberOfSlides = $(".dt-owl-item:not('.cloned')").length;
+		
+			$(".dt-owl-item:not('.cloned')").each(function(i,e){
+				$slideNumber = i+1;
+				$(this).attr("aria-label", $slideNumber + " of " + $numberOfSlides)
+			});
+			
+			//$(".owl-prev i, .owl-next i").wrap("<button></button>");
+			$(".owl-prev, .owl-next").attr({
+				"role": "button",
+				"tabindex": "0",
+				"aria-controls": $(".owl-carousel").attr("id"),
+			});
+			
+			$(".owl-next").attr("aria-label", "Next");
+			$(".owl-prev").attr("aria-label", "Previous");
+			
+		}, 10);
+		
+		$(".owl-prev, .owl-next").on("keypress", function(e){
+			$this = $(this);
+			switch (e.which){
+				case 32:    //Spacebar key
+				case 13:    //Enter key
+					e.stopPropagation();
+					$this.click();
+					break;
+			}
+		});
+	}
+	
+	//Update filter/search views form labels Issue: VV-156
+	if($("select.views-filter-select").length){
+		$("select.views-filter-select").each(function(){
+			$this = $(this);
+			$id = $this.attr("id");
+			$this.siblings("label").attr("for", $id);
+		});
+		
+	}
+	
+	if($("input.views-filter-text").length){
+		$("input.views-filter-text").each(function(){
+			$this = $(this);
+			$id = $this.siblings("label").attr("for");
+			$this.attr("id", $id);
+		});
+		
+	}
+	
+	
+	//Add filter/search views form landmark label Issue: VV-157
+	if($(".wpv-filter-form.js-wpv-filter-form").length){
+		$title = document.getElementsByTagName("title")[0].innerHTML.replace(" – Verified Voting", "");
+		$(".wpv-filter-form.js-wpv-filter-form").attr("aria-label" , $title + " Filter");
+	}
+	
+	
+	//Add empty alt text to images Issue: VV-155
+	if($("#wpv-view-layout-1648 .publication-result .left-col > img").length){
+		$("#wpv-view-layout-1648 .publication-result .left-col > img").attr("alt" , "");
+	}
+	
+	//Add donation form iframe title Issue: VV-173
+	if($(".qgiv-embed-container").length){
+		$thisInt = setInterval(addDonationTitle, 750);
+		function addDonationTitle(){
+			if($(".qgiv-embed-container > iframe").length){
+				$('.qgiv-embed-container > iframe').attr('title', 'Donation Form');
+				clearInterval($thisInt);
+			}
+		}
+	}
+	
+	//Add diclsoure widget markup Issue: VV-240
+	if($(".map-navigation .widget_presscore-custom-menu-two .custom-nav").length){
+		$(".map-navigation .widget_presscore-custom-menu-two .custom-nav > li.first > a").attr({
+			"role": "button",
+			"aria-expanded": false,
+		});
+		$(".map-navigation .widget_presscore-custom-menu-two .custom-nav > li.first > a").on("click", function(){
+			$this = $(this);
+			if($this.hasClass("active")){
+			 $this.attr("aria-expanded", true);
+			}else{
+				$this.attr("aria-expanded", false);
+			}
+		}).on("keypress", function(e){
+			$this = $(this);
+			switch (e.which){
+				case 32:    //Spacebar key
+					e.stopPropagation();
+					$this.click();
+					break;
+			}
+		});
+	}
+	
+	//Add status role to loading spinner Issue: VV-367
+	if($(".wpcf7-spinner").length){
+		$(".wpcf7-spinner").attr("role", "status");
+		$(".wpcf7-spinner").append("<span class='screen-reader-text'>Form Submitting</span>");
+	}
+	
+	//Make subscribe and contact form names unique Issue: VV-117
+	if($(".subscribe-form-wrapper").length){
+		$(".subscribe-form-wrapper").parents("form").attr("aria-label" , "Newsletter Signup Form");
+	}
+	if($(".contact-form").length){
+		$(".contact-form").parents("form").attr("aria-label" , "Contact Form");
+	}
+
+	
+});
