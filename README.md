@@ -29,3 +29,21 @@
 - Uses Windows and Ubuntu operating systems which can have vulnerabilities
 
 While the system has some good security measures like avoiding internet connections, its reliance on USB drives for data transfer and common commercial hardware/software could potentially make it vulnerable to tampering if proper procedures aren't followed strictly. However, having paper ballots as backup helps ensure votes can be verified.
+
+
+## Electromagnetic (EM) Eavesdropping
+
+#### Exploit Details:
+- Attackers capture EM emissions to reconstruct data (TEMPEST attacks).
+- Example: Capturing keystrokes by detecting EM signals from keyboards.
+
+#### Solutions:
+- EM Shielding: Use shielded cables and hardware to reduce emissions.
+- Secure Facility Design: Implement EM-secure rooms (Faraday cages) if necessary.
+- Distance and Barriers: Keep sensitive equipment away from external walls.
+
+
+
+
+
+
