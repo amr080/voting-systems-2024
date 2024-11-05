@@ -1,17 +1,16 @@
-## Voting technology for US 2024 presidential election
-Location: Lycoming County, PA [swing state]
+## Voting Technology for US 2024 Presidential Election
 
-- Clearcast voting systems
-- Paper ballot inserted into machine
-- Polling place ran older individuals (100% had grey hair) 
-- Signed paper next to name
-- Zero ID verification 
+**Location:** Lycoming County, PA (swing state)
 
-## Links
+### Voting Process
+- **Technology Used:** ClearCast voting systems
+- **Ballot Type:** Paper ballot inserted into machine
+- **Polling Place Demographics:** Managed by older individuals (100% had grey hair)
+- **Verification Process:**
+  - Signed paper next to voter's name
+  - No ID verification conducted
 
-Make / Model: Clear Ballot ClearCast and ClearCast Go
-Equipment Type: Hand-Fed Optical Scan Tabulator
-
-
-
-[https://verifiedvoting.org/election-system/clear-ballot-clearcast/](equipment specs)
+## Technology
+- **Make/Model:** Clear Ballot ClearCast and ClearCast Go
+- **Equipment Type:** Hand-Fed Optical Scan Tabulator
+- [Equipment Specs on Verified Voting](https://verifiedvoting.org/election-system/clear-ballot-clearcast/)
